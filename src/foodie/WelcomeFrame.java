@@ -1,6 +1,5 @@
 package foodie;
 
-import java.net.*;
 import java.io.*;
 import java.awt.*;
 import javax.swing.*;
@@ -9,12 +8,12 @@ import javax.imageio.*;
 
 public class WelcomeFrame {
 
-    String[]restaurantList = {"Amenia", "China Town", "Pappu Dhaba", "Banana Leaf"};//later this will be loaded from database.
+    private String[]restaurantList = {"Amenia", "China Town", "Pappu Dhaba", "Banana Leaf"};//later this will be loaded from database.
 
-    JFrame frame;
-    JLabel foodieLabel, selectResturantLabel;
-    JButton loginButton, signupButton, loadMenu;
-    JComboBox comboBox;
+    private JFrame frame;
+    private JLabel foodieLabel, selectResturantLabel;
+    private JButton loginButton, signupButton, loadMenu;
+    private JComboBox comboBox;
     
     public static void main(String[]args) {
         new WelcomeFrame().createAndShowGUI();
@@ -49,6 +48,14 @@ public class WelcomeFrame {
         signupButton.setFocusPainted(false);
         signupButton.setSize(170, 30);
         signupButton.setLocation(550, 200);
+        signupButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                signupButton.setEnabled(false);//to prevent clicking twice.
+                new Signup().createAndShowGUI();
+                frame.setVisible(false);
+            }
+        });
 
         selectResturantLabel = new JLabel("Select Restaurant :");
         selectResturantLabel.setForeground(Color.white);

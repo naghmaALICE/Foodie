@@ -127,7 +127,7 @@ public class WelcomeFrame_old extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // signup button
-        new SignupFrame().setVisible(true);
+        new SignupFrame_old().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
